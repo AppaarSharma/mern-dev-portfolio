@@ -1,0 +1,16 @@
+{
+  "name": "Arjun Sethi Portfolio",
+  "short_name": "DevGrid",
+  "description": "Modern MERN stack developer portfolio with product case studies and a Node contact API.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6ef",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "256x256",
+      "type": "image/svg+xml"
+    }
+  ]
+}

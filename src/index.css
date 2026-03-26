@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f4f6ef;
+  --bg-soft: rgba(255, 255, 255, 0.56);
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --text-primary: #132115;
+  --text-secondary: #415845;
+  --text-muted: #607162;
+  --border-color: rgba(19, 33, 21, 0.12);
+  --accent: #0f766e;
+  --accent-strong: #0e8a74;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --accent-ghost: rgba(15, 118, 110, 0.08);
+  --grid-line: rgba(19, 33, 21, 0.06);
+  --shadow-soft: 0 24px 80px rgba(18, 33, 24, 0.12);
+}
+
+[data-theme='night'] {
+  color-scheme: dark;
+  --bg: #030705;
+  --bg-soft: rgba(4, 10, 6, 0.72);
+  --surface: rgba(7, 18, 10, 0.82);
+  --surface-strong: rgba(10, 24, 13, 0.96);
+  --text-primary: #d9ffe4;
+  --text-secondary: #86bf94;
+  --text-muted: #5f8368;
+  --border-color: rgba(120, 255, 166, 0.16);
+  --accent: #78ffa6;
+  --accent-strong: #c4ffd6;
+  --accent-soft: rgba(120, 255, 166, 0.12);
+  --accent-ghost: rgba(120, 255, 166, 0.08);
+  --grid-line: rgba(120, 255, 166, 0.08);
+  --shadow-soft: 0 24px 90px rgba(0, 0, 0, 0.45);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 10%, rgba(95, 219, 146, 0.12), transparent 24%),
+    var(--bg);
+  color: var(--text-secondary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+[data-theme='night'] body {
+  background:
+    radial-gradient(circle at top left, rgba(120, 255, 166, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(33, 97, 55, 0.34), transparent 26%),
+    var(--bg);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(120, 255, 166, 0.03) 0px,
+    rgba(120, 255, 166, 0.03) 1px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+[data-theme='night'] body::before {
+  opacity: 1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 82%);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+#root {
+  position: relative;
+  z-index: 2;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[28px] border backdrop-blur-xl;
+    background: var(--surface);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .panel-strong {
+    @apply rounded-[32px] border backdrop-blur-xl;
+    background: var(--surface-strong);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .section-shell {
+    @apply relative overflow-hidden rounded-[36px] border px-6 py-10 md:px-10 md:py-14;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 32%),
+      var(--surface);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-soft);
+  }
+
+  [data-theme='night'] .section-shell {
+    background:
+      linear-gradient(180deg, rgba(120, 255, 166, 0.06), transparent 38%),
+      var(--surface);
+  }
+}

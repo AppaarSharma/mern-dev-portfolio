@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F4F6EF"/>
+  <rect x="44" y="44" width="1112" height="542" rx="36" fill="white"/>
+  <rect x="44" y="44" width="1112" height="542" rx="36" stroke="#162516" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="964" cy="170" r="150" fill="#0F766E" fill-opacity="0.12"/>
+  <circle cx="1040" cy="214" r="118" fill="#78FFA6" fill-opacity="0.16"/>
+  <text x="102" y="220" fill="#172319" font-size="28" font-family="Arial, sans-serif" letter-spacing="4">MERN STACK DEVELOPER</text>
+  <text x="102" y="314" fill="#0D1510" font-size="78" font-weight="700" font-family="Arial, sans-serif">Arjun Sethi</text>
+  <text x="102" y="390" fill="#42604A" font-size="32" font-family="Arial, sans-serif">High-performance React frontends, resilient Node APIs, and case-study driven product engineering.</text>
+  <rect x="102" y="444" width="246" height="58" rx="29" fill="#0F766E"/>
+  <text x="146" y="481" fill="white" font-size="24" font-family="Arial, sans-serif">View Portfolio</text>
+</svg>

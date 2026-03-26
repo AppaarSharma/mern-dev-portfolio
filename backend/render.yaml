@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: devgrid-portfolio-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: FRONTEND_ORIGIN
+        sync: false
