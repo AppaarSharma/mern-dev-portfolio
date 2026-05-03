@@ -17,7 +17,7 @@ import {
   type Project,
   type SectionId,
 } from './utils/portfolioData'
-
+// Lazy Loads
 const LiveDemoSection = lazy(() => import('./sections/LiveDemoSection'))
 const TerminalSection = lazy(() => import('./sections/TerminalSection'))
 const ProjectArchitectureModal = lazy(
